@@ -128,6 +128,7 @@
     <Compile Include="CompositionRoot\InitialiseControllerFactory.cs" />
     <Compile Include="CompositionRoot\DependencyInversionControllerFactory.cs" />
     <Compile Include="Controllers\HelloController.cs" />
+    <Compile Include="Factory\FactoryContainerAdapter.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Adapters\SitecoreLoggedOnUser.cs" />
@@ -151,6 +152,7 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
     <Content Include="App_Config\Include\DependencyInversion\Unicorn.Configs.DependencyInversion.config" />
+    <Content Include="App_Config\Include\DependencyInversion\Factory.config" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\Hello\Index.cshtml" />

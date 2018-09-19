@@ -11,17 +11,9 @@ namespace DependencyInversion.CompositionRoot
 {
     public sealed class DependencyInversionControllerFactory : SitecoreControllerFactory
     {
-        private static readonly Container Container;
+        private static readonly Container Container = Bootstrapper.Bootstrap();
 
-        static DependencyInversionControllerFactory()
-        {
-            Container = Bootstrapper.Bootstrap();
-        }
-
-        public DependencyInversionControllerFactory(
-            IControllerFactory innerFactory) : base(innerFactory)
-        {
-        }
+        public DependencyInversionControllerFactory(IControllerFactory innerFactory) : base(innerFactory){}
 
         public override IController CreateController(RequestContext requestContext, string controllerName)
         {

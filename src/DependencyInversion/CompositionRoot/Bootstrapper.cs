@@ -8,29 +8,29 @@ namespace DependencyInversion.CompositionRoot
 {
     public static class Bootstrapper
     {
-        private static Container _container;
+        public static Container Container;
 
         public static Container Bootstrap()
         {
-            _container = new Container();
+            Container = new Container();
 
-            _container.RegisterSingleton<ILoggedOnUser, SitecoreLoggedOnUser>();
+            Container.RegisterSingleton<ILoggedOnUser, SitecoreLoggedOnUser>();
             RegisterController<HelloController>();
 
 #if DEBUG
-            _container.Verify(VerificationOption.VerifyAndDiagnose);
+            Container.Verify(VerificationOption.VerifyAndDiagnose);
 #else
             _container.Verify();
 #endif
-            return _container;
+            return Container;
         }
 
         private static void RegisterController<TController>()
-        where TController : IController
+            where TController : IController
         {
             var controllerType = typeof(TController);
-            var lifestyle = _container.Options.LifestyleSelectionBehavior.SelectLifestyle(controllerType);
-            var registration = lifestyle.CreateRegistration(controllerType, _container);
+            var lifestyle = Container.Options.LifestyleSelectionBehavior.SelectLifestyle(controllerType);
+            var registration = lifestyle.CreateRegistration(controllerType, Container);
 
             // Microsoft.AspNetCore.Mvc.Controller implements IDisposable (which is a design flaw).
             // This will cause false positives in Simple Injector's diagnostic services, so we suppress
@@ -39,7 +39,7 @@ namespace DependencyInversion.CompositionRoot
                 DiagnosticType.DisposableTransientComponent,
                 "Derived type doesn't override Dispose, so it can be safely ignored.");
 
-            _container.AddRegistration<IController>(registration);
+            Container.AddRegistration<IController>(registration);
         }
     }
 }

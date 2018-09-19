@@ -119,6 +119,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\ILogAdapter.cs" />
+    <Compile Include="Adapters\SitecoreLogAdapter.cs" />
+    <Compile Include="Commands\CommandTaskContainerAdapter.cs" />
+    <Compile Include="Commands\ExampleCommand.cs" />
+    <Compile Include="Commands\ICommand.cs" />
     <Compile Include="CompositionRoot\Bootstrapper.cs" />
     <Compile Include="CompositionRoot\InitialiseControllerFactory.cs" />
     <Compile Include="CompositionRoot\DependencyInversionControllerFactory.cs" />

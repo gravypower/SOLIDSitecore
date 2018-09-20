@@ -1,0 +1,28 @@
+﻿---
+ID: "3390aa2d-de3e-4ec0-8a8c-d43427aef2fd"
+Parent: "e848bdce-e5db-4957-859d-5ea32c7c4418"
+Template: "638537c6-e0b1-418a-be17-66bdda6caeb7"
+Path: /sitecore/system/Tasks/Commands/DependencyInversion/ExampleCommand
+DB: master
+SharedFields:
+- ID: "4bc75539-d5c4-487b-af35-ff13d62bd286"
+  Hint: Method
+  Value: Execute
+- ID: "752579a7-ef2f-45b7-b9d1-9b682308b7a5"
+  Hint: Type
+  Value: DependencyInversion.CompositionRoot.ContainerAdapters.CommandTaskContainerAdapter, DependencyInversion
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180920T203740Z
+    - ID: "35e39de9-bbbc-4c2d-af70-14fb12650914"
+      Hint: Command Type
+      Value: DependencyInversion.Commands.ExampleCommand, DependencyInversion
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

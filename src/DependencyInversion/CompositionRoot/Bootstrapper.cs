@@ -10,11 +10,12 @@ namespace DependencyInversion.CompositionRoot
     {
         public static Container Container;
 
-        public static Container Bootstrap()
+        static Bootstrapper()
         {
             Container = new Container();
 
             Container.RegisterSingleton<ILoggedOnUser, SitecoreLoggedOnUser>();
+            Container.Register<ILogAdapter, SitecoreLogAdapter>();
             RegisterController<HelloController>();
 
 #if DEBUG
@@ -22,7 +23,6 @@ namespace DependencyInversion.CompositionRoot
 #else
             _container.Verify();
 #endif
-            return Container;
         }
 
         private static void RegisterController<TController>()

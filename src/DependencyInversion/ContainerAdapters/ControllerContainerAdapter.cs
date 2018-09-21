@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Routing;
+using DependencyInversion.CompositionRoot;
 using SimpleInjector;
 using Sitecore.Diagnostics;
 using Sitecore.Mvc.Configuration;
 using Sitecore.Mvc.Controllers;
 using Sitecore.Mvc.Extensions;
 
-namespace DependencyInversion.CompositionRoot
+namespace DependencyInversion.ContainerAdapters
 {
-    public sealed class DependencyInversionControllerFactory : SitecoreControllerFactory
+    public sealed class ControllerContainerAdapter : SitecoreControllerFactory
     {
-        public DependencyInversionControllerFactory(IControllerFactory innerFactory) : base(innerFactory){}
+        public ControllerContainerAdapter(IControllerFactory innerFactory) : base(innerFactory){}
 
         public override IController CreateController(RequestContext requestContext, string controllerName)
         {

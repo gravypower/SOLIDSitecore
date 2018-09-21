@@ -1,4 +1,5 @@
-﻿using Sitecore.Pipelines;
+﻿using DependencyInversion.ContainerAdapters;
+using Sitecore.Pipelines;
 
 namespace DependencyInversion.CompositionRoot
 {
@@ -7,7 +8,7 @@ namespace DependencyInversion.CompositionRoot
         public virtual void Process(PipelineArgs args)
         {
             var controllerBuilder = System.Web.Mvc.ControllerBuilder.Current;
-            var controllerFactory = new DependencyInversionControllerFactory(controllerBuilder.GetControllerFactory());
+            var controllerFactory = new ControllerContainerAdapter(controllerBuilder.GetControllerFactory());
             controllerBuilder.SetControllerFactory(controllerFactory);
         }
     }

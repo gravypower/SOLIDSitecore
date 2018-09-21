@@ -1,9 +1,10 @@
 ﻿using System;
 using DependencyInversion.Commands;
+using DependencyInversion.CompositionRoot;
 using Sitecore.Data.Items;
 using Sitecore.Tasks;
 
-namespace DependencyInversion.CompositionRoot.ContainerAdapters
+namespace DependencyInversion.ContainerAdapters
 {
     public class CommandTaskContainerAdapter
     {

@@ -10,7 +10,7 @@ SharedFields:
   Value: Execute
 - ID: "752579a7-ef2f-45b7-b9d1-9b682308b7a5"
   Hint: Type
-  Value: DependencyInversion.CompositionRoot.ContainerAdapters.CommandTaskContainerAdapter, DependencyInversion
+  Value: DependencyInversion.ContainerAdapters.CommandTaskContainerAdapter, DependencyInversion
 Languages:
 - Language: en
   Versions:

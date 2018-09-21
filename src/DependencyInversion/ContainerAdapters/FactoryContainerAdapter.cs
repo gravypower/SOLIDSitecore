@@ -1,7 +1,8 @@
 ﻿using System;
+using DependencyInversion.CompositionRoot;
 using Sitecore.Reflection;
 
-namespace DependencyInversion.CompositionRoot.ContainerAdapters
+namespace DependencyInversion.ContainerAdapters
 {
     public class FactoryContainerAdapter: IFactory
     {
